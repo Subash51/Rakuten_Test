@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Isbngenerator {
 	public static void main(String[]args) {
 		System.out.println("Enter any Product ID to get the ISBN Number:");
-		Scanner input = new Scanner(System.in);
-		String productId = input.nextLine();
+		Scanner inputIsbn = new Scanner(System.in);
+		String productId = inputIsbn.nextLine();
 		if(productId.length() == 12 && productId.matches("[0-9]+")) {
 			String partialIsbn = productId.substring(3); //extracting the 9 digit partial ISBN number.
 			String finalIsbnNumber = processIsbn(partialIsbn);
@@ -13,7 +13,6 @@ public class Isbngenerator {
 		else {
 			System.out.println("Please enter a valid Product Id!!!");
 		}
-
 	}
 
 /* This method returns a valid ISBN number for the partial ISBN number entered
